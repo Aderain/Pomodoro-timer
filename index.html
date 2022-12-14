@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Pomodoro</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pomodoro">
+            <h1 class="pomodoro__title">
+                Pomodoro
+            </h1>
+
+            <div class="pomodoro__btns">
+                <div class="pomodoro--btn btn active" data-mode="pomodoro">Pomodoro</div>
+                <div class="short--btn btn" data-mode="short">Short Break</div>
+                <div class="long--btn btn" data-mode="long">Long Break</div>
+            </div>
+
+            <div class="pomodoro__timer">
+                <!-- <svg class="progress-ring" width="272" height="272" aria-label="pomodoro clock">
+        <circle class="progress-ring__circle" stroke="white" stroke-width="8" fill="transparent" r="120" cx="136" cy="136" style="stroke-dasharray: 753.982, 753.982; stroke-dashoffset: 753.479;"></circle>
+      </svg> -->
+                <div class="inner-circle">
+                    <span class="counter"></span>
+                    <button class="start">Start</button>
+                </div>
+            </div>
+
+            <div class="pomodoro__settings">
+                <img class="settings-icon" src="./img/icon-settings.svg" alt="">
+            </div>
+        </div>
+
+        <div class="modal hidden">
+            <div class="modal-header">
+                <h2 class="modal-header__title">Settings</h2>
+                <img class="close-icon" src="./img/icon-close.svg" alt="">
+            </div>
+            <form class="modal-main">
+                <div class="time-settings">
+                    <h3 class="time-settings__title settings-title">Time(Minutes)</h3>
+                    <div class="timers">
+                        <div class="timer">
+                            <label for="timesetter" class="timesetter__title">Pomodoro</label>
+                            <input class="timesetter__pomodoro" type="number" name="timesetter" id="" min="5" max="90" step="1" value="25">
+                        </div>
+                        <div class="timer">
+                            <label for="timesetter" class="timesetter__title">Short break</label>
+                            <input class="timesetter__short" type="number" name="timesetter" id="" min="1" max="10" step="1" value="5">
+                        </div>
+                        <div class="timer">
+                            <label for="timesetter" class="timesetter__title">Long break</label>
+                            <input class="timesetter__long" type="number" name="timesetter" id="" min="10" max="20" step="1" value="15">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fonts">
+                    <h3 class="settings-title">Font</h3>
+                    <div class="font__selection">
+                        <div class="fonts__container">
+                            <input checked class="fonts__list kumbh" type="radio" name="font-list" id="kumbh">
+                            <label for="kumbh">Aa</label>
+                        </div>
+                        <div class="fonts__container">
+                            <input class="fonts__list roboto" type="radio" name="font-list" id="georgia">
+                            <label for="georgia">Aa</label>
+                        </div>
+                        <div class="fonts__container">
+                            <input class="fonts__list mono" type="radio" name="font-list" id="mono">
+                            <label for="mono">Aa</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colors">
+                    <h3 class="settings-title">Color</h3>
+
+                    <div class="color__selection">
+                        <div class="color__container">
+                            <input checked class="color__list orange" type="radio" name="color-selector" id="orange">
+                            <label for="orange">✔</label>
+                        </div>
+                        <div class="color__container">
+                            <input class="color__list blue" type="radio" name="color-selector" id="blue">
+                            <label for="blue">✔</label>
+                        </div>
+                        <div class="color__container">
+                            <input class="color__list purple" type="radio" name="color-selector" id="purple">
+                            <label for="purple">✔</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="apply btn">Apply</button>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

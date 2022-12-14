@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --textColor: #fff;
+    --ff:'Kumbh Sans', sans-serif;
+    /* --ff: 'Georgia', sans-serif;
+    --ff: monospace; */
+}
+
+body{
+    color: var(--textColor);
+    font-family: var(--ff);
+}
+
+.container{
+    background: #1E213F;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.pomodoro{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 55px;
+    text-align: center;
+}
+
+.pomodoro__title{
+    margin-top: 48px;
+}
+
+.pomodoro__btns{
+    display: flex;
+    background: #000000;
+    gap: 20px;
+    padding: 2px 10px;
+    border-radius: 30px;
+}
+
+.active{
+    background-color: #F87070;
+    color: #161932;
+}
+
+.btn{
+    padding: 14px 18px;
+    margin-block: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s all ease;
+}
+
+.pomodoro--btn{
+   
+}
+
+.short--btn{
+
+}
+
+.long--btn{
+
+}
+
+.pomodoro__timer{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: #161932;
+    box-shadow: 0px 1px 5px 17px #292d53;
+}
+
+.inner-circle{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 15px;
+}
+
+.counter{
+    font-size: 100px;
+    font-weight: 700;
+    transition: 0.2s all ease;
+}
+
+.start{
+    font-size: 16px;
+    letter-spacing: 13px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    animation-duration: 0.75s;
+    animation-iteration-count: 1;
+    
+}
+
+.start:hover{
+    animation-name: scale;
+}
+
+.start:focus{
+    outline: none;
+}
+
+.pomodoro__settings{
+    margin-top: 30px;
+}
+
+.settings-icon{
+    cursor: pointer;
+    animation-duration: 0.75s;
+    animation-iteration-count: 1;
+}
+
+.settings-icon:hover{
+    animation-name: scale;
+}
+
+
+
+
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+/* Modal */
+.modal{
+    width: 37%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 52px;
+    align-items: center;
+}
+
+.close-icon{
+    cursor: pointer;
+}
+
+.modal-header__title{
+    font-size: 24px;
+    color: #000;
+}
+
+.modal-main{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+}
+
+.time-settings{
+    padding: 24px 0 10px;
+}
+
+.settings-title{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4.23px;
+    line-height: 100%;
+    font-size: 0.69rem;
+    color: #000;
+}
+
+.timers{
+    display: flex;
+    gap: 30px;
+}
+
+.timer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: 14px 0;
+}
+
+.timesetter__title{
+    color: #000;
+    font-size: 14px;
+}
+
+input[type="number"]{
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 15px;
+    background-color: #d3e2f0;
+    border: none;
+}
+
+.fonts, .colors, .time-settings, .modal-header{
+    border-bottom: 1px solid #000;  
+}
+
+.fonts, .colors{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 40px;
+}
+
+.font__selection{
+    display: flex;
+    gap: 50px;
+}
+
+.fonts__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#kumbh + label{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+#georgia + label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#mono + label{
+    font-family: monospace;
+}
+
+
+input[name="font-list"]{
+    border-radius: 50%;
+    padding: 0;
+}
+
+input[name="font-list"] + label{
+    cursor: pointer;
+    background: #c9c7c7;
+    color: #FFFFFF;
+    border-radius: 100%;
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[name="font-list"]:checked + label{
+    background: #161932;
+    color: #FFFFFF;
+}
+
+.color__selection{
+    display: flex;
+    gap: 50px;
+}
+
+.color__selection, .font__selection{
+    padding-right: 15px;
+}
+
+.color__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[name="color-selector"] + label{
+    cursor: pointer;
+    color: #FFFFFF;
+    border-radius: 100%;
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orange + label{
+    background: orange;
+}
+
+.blue + label{
+    background: blue;
+}
+
+.purple + label{
+    background: purple;
+}
+
+input[name="color-selector"]:checked + label{
+    background-color: #161932;
+    opacity: 1;
+}
+
+.apply{
+    padding: 18px;
+    border-radius: 26.5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: #F87070;
+    color: #FFFFFF;
+    position: relative;
+    margin-top: 15px;
+}
+
+.modal.hidden{
+    display: none;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .modal{
+        width: 50%;
+        left: 25%;
+    }
+
+    .timers{
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .timer{
+        margin: 5px;
+        gap:5px;
+    }
+    
+    /* .fonts,.colors{
+        flex-direction: column;
+    } */
+}
+
+@media screen and (max-width: 800px) {
+    .modal{
+        width: 70%;
+        left: 15%;
+    }
+    
+    /* .fonts,.colors{
+        flex-direction: column;
+    } */
+}
+
+@media screen and (max-width: 475px) {
+    .modal{
+        width: 90%;
+        left: 5%;
+    }
+    
+    /* .fonts,.colors{
+        flex-direction: column;
+    } */
+}
